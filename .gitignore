@@ -1,0 +1,25 @@
+# Environment
+.env
+.venv/
+!.env.example
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / React
+node_modules/
+frontend/dist/
+frontend/build/
+npm-debug.log*
+yarn-error.log*
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
