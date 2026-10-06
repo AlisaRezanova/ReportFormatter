@@ -23,10 +23,10 @@ class UserRead(ORMModel):
 class RuleBase(BaseModel):
     name: str
 
-    margin_left: float = 30
+    margin_left: float = 3
     margin_right: float = 1.5
-    margin_top: float = 20
-    margin_bottom: float = 20
+    margin_top: float = 2
+    margin_bottom: float = 2
 
     font_name: str = "Times New Roman"
     font_size: int = 12

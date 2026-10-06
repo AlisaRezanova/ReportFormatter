@@ -33,18 +33,19 @@ class Rule(Base):
     owner_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"))
     name: Mapped[str]
 
-    margin_left: Mapped[float] = mapped_column(default=30)
-    margin_right: Mapped[float] = mapped_column(default=10)
-    margin_top: Mapped[float] = mapped_column(default=20)
-    margin_bottom: Mapped[float] = mapped_column(default=20)
+    # page margins, cm
+    margin_left: Mapped[float] = mapped_column(default=3)
+    margin_right: Mapped[float] = mapped_column(default=1.5)
+    margin_top: Mapped[float] = mapped_column(default=2)
+    margin_bottom: Mapped[float] = mapped_column(default=2)
 
     font_name: Mapped[str] = mapped_column(default="Times New Roman")
-    font_size: Mapped[int] = mapped_column(default=14)
+    font_size: Mapped[int] = mapped_column(default=12)
     line_spacing: Mapped[float] = mapped_column(default=1.5)
-    first_line_indent: Mapped[float] = mapped_column(default=12.5)  # mm
+    first_line_indent: Mapped[float] = mapped_column(default=1.25)  # cm
 
     heading_font_name: Mapped[str] = mapped_column(default="Times New Roman")
-    heading_font_size: Mapped[int] = mapped_column(default=14)
+    heading_font_size: Mapped[int] = mapped_column(default=12)
 
     owner: Mapped["User | None"] = relationship(back_populates="rules")
 

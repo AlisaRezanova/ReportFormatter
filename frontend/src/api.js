@@ -33,36 +33,47 @@ const MOCK_RULES = [
     id: 1,
     owner_id: null,
     name: 'ГОСТ 7.32-2017 (отчет о НИР)',
-    margin_left: 30,
-    margin_right: 10,
-    margin_top: 20,
-    margin_bottom: 20,
+    margin_left: 3,
+    margin_right: 1.5,
+    margin_top: 2,
+    margin_bottom: 2,
     font_name: 'Times New Roman',
     font_size: 14,
     line_spacing: 1.5,
-    first_line_indent: 12.5,
+    first_line_indent: 1.25,
   },
   {
     id: 2,
     owner_id: null,
     name: 'ГОСТ 2.105-2019 (текстовые документы)',
-    margin_left: 20,
-    margin_right: 10,
-    margin_top: 20,
-    margin_bottom: 20,
+    margin_left: 2,
+    margin_right: 1,
+    margin_top: 2,
+    margin_bottom: 2,
     font_name: 'Times New Roman',
     font_size: 14,
     line_spacing: 1.5,
-    first_line_indent: 12.5,
+    first_line_indent: 1.25,
   },
 ]
 
 export async function getRules() {
   if (USE_MOCK) {
     await delay(300)
-    return MOCK_RULES
+    return [...MOCK_RULES]
   }
   // TODO: GET /api/rules
+}
+
+// data совпадает с RuleCreate из backend/app/schemas.py, ответ - с RuleRead
+export async function createRule(data) {
+  if (USE_MOCK) {
+    await delay(500)
+    const rule = { ...data, id: Date.now(), owner_id: 1 }
+    MOCK_RULES.push(rule)
+    return rule
+  }
+  // TODO: POST /api/rules
 }
 
 // Формат совпадает с IssueRead: { id, parameter, expected, actual }
@@ -70,7 +81,7 @@ export async function checkReport(file, ruleId) {
   if (USE_MOCK) {
     await delay(1000)
     return [
-      { id: 1, parameter: 'margin_left', expected: '30 мм', actual: '20 мм' },
+      { id: 1, parameter: 'margin_left', expected: '3 см', actual: '2 см' },
       { id: 2, parameter: 'font_name', expected: 'Times New Roman', actual: 'Arial' },
       { id: 3, parameter: 'font_size', expected: '14 pt', actual: '12 pt' },
       { id: 4, parameter: 'line_spacing', expected: '1,5', actual: '1,0' },

@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { renderAsync } from 'docx-preview'
-import { checkReport, formatReport, getRules } from '../api.js'
+import Modal from '../components/Modal.jsx'
+import RuleForm from '../components/RuleForm.jsx'
+import { checkReport, createRule, formatReport, getRules } from '../api.js'
 
 const PARAM_LABELS = {
   margin_left: 'Левое поле',
@@ -70,6 +72,7 @@ export default function EditorPage({ file }) {
   const [busy, setBusy] = useState(null)
   const [formatted, setFormatted] = useState(false)
   const [error, setError] = useState('')
+  const [creating, setCreating] = useState(false)
 
   function applyZoom(next) {
     const value = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, next))
@@ -147,6 +150,13 @@ export default function EditorPage({ file }) {
     setIssues(null)
     setFormatted(false)
     setError('')
+  }
+
+  async function handleCreateRule(data) {
+    const rule = await createRule(data)
+    setRules((prev) => [...prev, rule])
+    selectRule(rule.id)
+    setCreating(false)
   }
 
   async function handleCheck() {
@@ -238,6 +248,9 @@ export default function EditorPage({ file }) {
               <span>{rule.name}</span>
             </label>
           ))}
+          <button type="button" className="rule-add" onClick={() => setCreating(true)}>
+            + Добавить правило
+          </button>
         </fieldset>
 
         <div className="result" aria-live="polite">
@@ -291,6 +304,10 @@ export default function EditorPage({ file }) {
           </button>
         </div>
       </aside>
+
+      <Modal open={creating} onClose={() => setCreating(false)}>
+        <RuleForm onSubmit={handleCreateRule} onCancel={() => setCreating(false)} />
+      </Modal>
     </main>
   )
 }
