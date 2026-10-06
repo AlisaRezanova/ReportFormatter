@@ -24,7 +24,7 @@ export default function Header() {
           <Link to="/login" className="auth-login">
             Войти
           </Link>
-          <Link to="/login" className="auth-signup">
+          <Link to="/login?mode=register" className="auth-signup">
             Регистрация
           </Link>
         </div>

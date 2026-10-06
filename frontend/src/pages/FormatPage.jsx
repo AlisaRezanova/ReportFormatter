@@ -26,9 +26,9 @@ export default function FormatPage() {
 
   return (
       <main className="upload">
-        <h1>{file ? 'Загрузите другой отчёт .docx' : 'Загрузите отчёт .docx'}</h1>
+        <h1>{file ? 'Загрузите другой отчет .docx' : 'Загрузите отчет .docx'}</h1>
         <p className="lede">
-          Проверим оформление по ГОСТ и приведём отчёт в порядок.
+          Проверим оформление по ГОСТ и приведем отчет в порядок.
         </p>
 
         <div

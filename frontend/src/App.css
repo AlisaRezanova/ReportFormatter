@@ -164,7 +164,7 @@
   font-size: 14px;
 }
 
-/* Главное действие экрана: единственное жёлтое пятно */
+/* Главное действие экрана: единственное желтое пятно */
 .btn-primary {
   padding: 12px 28px;
   font-weight: 600;
@@ -198,6 +198,86 @@
 .status-error svg {
   flex: none;
   color: var(--color-error-text);
+}
+
+/* ---------- Вход и регистрация ---------- */
+
+.auth-page {
+  padding: 48px 16px 80px;
+}
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 36px 28px 32px;
+  background: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: 16px;
+}
+
+.auth-card h1 {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: clamp(26px, 5vw, 34px);
+  line-height: 1.15;
+  text-align: center;
+}
+
+.auth-card .lede {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.field input {
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.field input:focus-visible {
+  outline-offset: 0;
+}
+
+.auth-card .status-error {
+  align-self: flex-start;
+}
+
+.auth-card .btn-primary {
+  align-self: center;
+  margin-top: 4px;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+.auth-switch {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.auth-switch a {
+  color: var(--color-primary-strong);
+  font-weight: 600;
 }
 
 @media (prefers-reduced-motion: no-preference) {
