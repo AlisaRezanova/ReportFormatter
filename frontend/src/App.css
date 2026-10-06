@@ -280,6 +280,249 @@
   font-weight: 600;
 }
 
+/* ---------- Страница с документом ---------- */
+
+.editor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+  width: calc(100% - 32px);
+  max-width: 1280px;
+  height: calc(100vh - 110px);
+  min-height: 520px;
+  margin: 16px auto;
+}
+
+.editor-preview,
+.editor-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: 16px;
+}
+
+.editor-preview {
+  padding: 12px;
+}
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 10px;
+  padding: 0 4px;
+}
+
+.editor-filename {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.zoom {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.zoom-btn,
+.zoom-value {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  font-weight: 600;
+  background: var(--color-background);
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.zoom-value {
+  min-width: 58px;
+  font-size: 14px;
+}
+
+.zoom-btn:hover,
+.zoom-value:hover {
+  background: color-mix(in srgb, var(--color-primary) 35%, #fff);
+}
+
+/* Розовый фон, чтобы белый лист не сливался с рамкой */
+.doc-preview {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: color-mix(in srgb, var(--color-primary) 70%, var(--color-background));
+  border-radius: 10px;
+}
+
+.doc-preview .docx-wrapper {
+  padding: 16px;
+  background: transparent;
+}
+
+.doc-preview section.docx {
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--color-primary-strong) 45%, transparent);
+}
+
+/* Линейка в сантиметрах, прилипает к верху при прокрутке */
+.doc-ruler {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  flex: none;
+  height: 22px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.ruler-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: color-mix(in srgb, var(--color-primary) 55%, #fff);
+}
+
+.ruler-tick {
+  position: absolute;
+  bottom: 0;
+  width: 1px;
+  height: 7px;
+  background: var(--color-border);
+}
+
+.ruler-tick.is-half {
+  height: 4px;
+}
+
+.ruler-num {
+  position: absolute;
+  top: 1px;
+  transform: translateX(-50%);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--color-text);
+  user-select: none;
+}
+
+.editor-panel {
+  gap: 16px;
+  padding: 20px;
+}
+
+.rule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.rule-list legend {
+  margin-bottom: 8px;
+  padding: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.rule-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--color-background);
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.rule-option.is-selected {
+  background: color-mix(in srgb, var(--color-primary) 35%, #fff);
+  border-color: var(--color-primary-strong);
+}
+
+.rule-option input {
+  accent-color: var(--color-primary-strong);
+}
+
+.result {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.result .hint {
+  margin: 0;
+}
+
+.result-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.issue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.issue {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  font-size: 14px;
+  background: var(--color-error);
+  border-radius: 10px;
+}
+
+.status-ok {
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 14px;
+  background: var(--color-correct);
+  border-radius: 10px;
+}
+
+.panel-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-secondary {
+  padding: 12px 28px;
+  font-weight: 600;
+  background: #fff;
+  border: 2px solid var(--color-primary-strong);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: color-mix(in srgb, var(--color-primary) 35%, #fff);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .btn-primary,
   .auth-login,
@@ -312,5 +555,17 @@
 
   .upload {
     padding-top: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .editor {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .doc-preview {
+    height: 60vh;
+    flex: none;
   }
 }

@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const isDocx = (file) => file.name.toLowerCase().endsWith('.docx')
 
-export default function FormatPage() {
+export default function FormatPage({ onPick }) {
+  const navigate = useNavigate()
   const inputRef = useRef(null)
   const [file, setFile] = useState(null)
   const [error, setError] = useState('')
@@ -16,6 +18,8 @@ export default function FormatPage() {
     }
     setError('')
     setFile(picked)
+    onPick(picked)
+    navigate('/editor')
   }
 
   function handleDrop(event) {
