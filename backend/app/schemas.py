@@ -20,6 +20,12 @@ class UserRead(ORMModel):
     created_at: datetime  
 
 
+class TokenRead(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    user: UserRead
+
+
 class RuleBase(BaseModel):
     name: str
 

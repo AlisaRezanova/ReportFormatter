@@ -33,7 +33,6 @@ class Rule(Base):
     owner_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"))
     name: Mapped[str]
 
-    # page margins, cm
     margin_left: Mapped[float] = mapped_column(default=3)
     margin_right: Mapped[float] = mapped_column(default=1.5)
     margin_top: Mapped[float] = mapped_column(default=2)
@@ -61,9 +60,11 @@ class Report(Base):
     created_at: Mapped[datetime] = mapped_column(server_default=func.now())
 
     owner: Mapped["User"] = relationship(back_populates="reports")
-    rule: Mapped["Rule"] = relationship()
+    # lazy="selectin": в async-сессии ленивая подгрузка невозможна,
+    # связанные объекты грузятся сразу вторым запросом.
+    rule: Mapped["Rule"] = relationship(lazy="selectin")
     issues: Mapped[list["Issue"]] = relationship(
-        back_populates="report", cascade="all, delete-orphan"
+        back_populates="report", cascade="all, delete-orphan", lazy="selectin"
     )
 
 

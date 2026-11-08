@@ -1,19 +1,19 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import DeclarativeBase, sessionmaker
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+from sqlalchemy.orm import DeclarativeBase
 
 from app.config import settings
 
-engine = create_engine(settings.database_url)
-SessionLocal = sessionmaker(bind=engine, autoflush=False)
+# Alembic использует settings.database_url (psycopg2), приложение - asyncpg.
+async_url = settings.database_url.replace('postgresql://', 'postgresql+asyncpg://', 1)
+
+engine = create_async_engine(async_url)
+SessionLocal = async_sessionmaker(engine, autoflush=False, expire_on_commit=False)
 
 
 class Base(DeclarativeBase):
     pass
 
 
-def get_db():
-    db = SessionLocal()
-    try:
+async def get_db():
+    async with SessionLocal() as db:
         yield db
-    finally:
-        db.close()
