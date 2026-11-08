@@ -7,7 +7,7 @@
   margin: 16px auto 0;
   padding: 10px 16px 10px 20px;
   background: var(--color-primary);
-  border-radius: 20px;
+  border-radius: var(--r-xl);
 }
 
 .brand {
@@ -21,7 +21,7 @@
 .brand-icon {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: var(--r-md);
 }
 
 .logo {
@@ -75,7 +75,7 @@
 }
 
 .auth-signup {
-  color: #fff;
+  color: var(--color-on-strong);
   background: var(--color-primary-strong);
 }
 
@@ -116,9 +116,9 @@
   justify-content: center;
   margin: 40px auto 0;
   padding: 48px 24px 40px;
-  background: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: 16px 0 16px 16px;
+  background: var(--color-surface);
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-lg) 0 var(--r-lg) var(--r-lg);
 }
 
 .dropzone::after {
@@ -134,13 +134,13 @@
     var(--color-border) calc(50% - 1px) calc(50% + 1px),
     var(--color-primary) calc(50% + 1px) 100%
   );
-  border-left: 2px solid var(--color-border);
-  border-bottom: 2px solid var(--color-border);
+  border-left: var(--border-w) solid var(--color-border);
+  border-bottom: var(--border-w) solid var(--color-border);
   border-bottom-left-radius: 6px;
 }
 
 .dropzone.is-dragging {
-  background: color-mix(in srgb, var(--color-primary) 35%, #fff);
+  background: color-mix(in srgb, var(--color-primary) 35%, var(--color-surface));
   border-color: var(--color-primary-strong);
 }
 
@@ -164,8 +164,9 @@
 .btn-primary {
   padding: 12px 28px;
   font-weight: 600;
+  color: var(--color-on-accent);
   background: var(--color-accent);
-  border: 2px solid var(--color-primary-strong);
+  border: var(--border-w) solid var(--color-primary-strong);
   border-radius: 999px;
   cursor: pointer;
 }
@@ -188,7 +189,7 @@
   padding: 8px 14px;
   font-size: 14px;
   background: var(--color-error);
-  border-radius: 10px;
+  border-radius: var(--r-sm);
 }
 
 .status-error svg {
@@ -209,9 +210,9 @@
   max-width: 420px;
   margin: 0 auto;
   padding: 36px 28px 32px;
-  background: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: 16px;
+  background: var(--color-surface);
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-lg);
 }
 
 .auth-card h1 {
@@ -241,8 +242,8 @@
   font-weight: 400;
   color: var(--color-text);
   background: var(--color-background);
-  border: 2px solid var(--color-border);
-  border-radius: 10px;
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-sm);
 }
 
 .field input:focus-visible {
@@ -294,9 +295,9 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-  background: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: 16px;
+  background: var(--color-surface);
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-lg);
 }
 
 .editor-preview {
@@ -332,7 +333,7 @@
   padding: 0 8px;
   font-weight: 600;
   background: var(--color-background);
-  border: 2px solid var(--color-border);
+  border: var(--border-w) solid var(--color-border);
   border-radius: 999px;
   cursor: pointer;
 }
@@ -344,7 +345,7 @@
 
 .zoom-btn:hover,
 .zoom-value:hover {
-  background: color-mix(in srgb, var(--color-primary) 35%, #fff);
+  background: color-mix(in srgb, var(--color-primary) 35%, var(--color-surface));
 }
 
 
@@ -353,7 +354,7 @@
   min-height: 0;
   overflow: auto;
   background: color-mix(in srgb, var(--color-primary) 70%, var(--color-background));
-  border-radius: 10px;
+  border-radius: var(--r-sm);
 }
 
 .doc-preview .docx-wrapper {
@@ -374,7 +375,7 @@
   height: 22px;
   margin-bottom: 10px;
   overflow: hidden;
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 6px;
   box-sizing: border-box;
@@ -384,7 +385,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  background: color-mix(in srgb, var(--color-primary) 55%, #fff);
+  background: color-mix(in srgb, var(--color-primary) 55%, var(--color-surface));
 }
 
 .ruler-tick {
@@ -437,13 +438,13 @@
   gap: 10px;
   padding: 10px 14px;
   background: var(--color-background);
-  border: 2px solid var(--color-border);
-  border-radius: 12px;
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-md);
   cursor: pointer;
 }
 
 .rule-option.is-selected {
-  background: color-mix(in srgb, var(--color-primary) 35%, #fff);
+  background: color-mix(in srgb, var(--color-primary) 35%, var(--color-surface));
   border-color: var(--color-primary-strong);
 }
 
@@ -484,7 +485,7 @@
   padding: 10px 14px;
   font-size: 14px;
   background: var(--color-error);
-  border-radius: 10px;
+  border-radius: var(--r-sm);
 }
 
 .status-ok {
@@ -492,7 +493,7 @@
   padding: 10px 14px;
   font-size: 14px;
   background: var(--color-correct);
-  border-radius: 10px;
+  border-radius: var(--r-sm);
 }
 
 .panel-actions {
@@ -504,14 +505,14 @@
 .btn-secondary {
   padding: 12px 28px;
   font-weight: 600;
-  background: #fff;
-  border: 2px solid var(--color-primary-strong);
+  background: var(--color-surface);
+  border: var(--border-w) solid var(--color-primary-strong);
   border-radius: 999px;
   cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background: color-mix(in srgb, var(--color-primary) 35%, #fff);
+  background: color-mix(in srgb, var(--color-primary) 35%, var(--color-surface));
 }
 
 .btn-secondary:disabled {
@@ -526,12 +527,12 @@
   font-weight: 600;
   background: transparent;
   border: 2px dashed var(--color-border);
-  border-radius: 12px;
+  border-radius: var(--r-md);
   cursor: pointer;
 }
 
 .rule-add:hover {
-  background: color-mix(in srgb, var(--color-primary) 35%, #fff);
+  background: color-mix(in srgb, var(--color-primary) 35%, var(--color-surface));
 }
 
 .rules-page {
@@ -569,9 +570,9 @@
 
 .rule-card {
   padding: 16px 20px;
-  background: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: 16px;
+  background: var(--color-surface);
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-lg);
 }
 
 .rule-card p {
@@ -610,9 +611,9 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px 16px;
   padding: 24px;
-  background: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: 16px;
+  background: var(--color-surface);
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-lg);
 }
 
 .modal {
@@ -622,7 +623,7 @@
   color: var(--color-text);
   background: transparent;
   border: 0;
-  border-radius: 16px;
+  border-radius: var(--r-lg);
 }
 
 .modal::backdrop {
@@ -697,4 +698,219 @@
     height: 60vh;
     flex: none;
   }
+}
+
+/* ---------- Глубина ---------- */
+
+.dropzone,
+.auth-card,
+.editor-preview,
+.editor-panel,
+.rule-card,
+.rule-form {
+  box-shadow: var(--shadow);
+}
+
+.header {
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Временный переключатель тем ---------- */
+
+.theme-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  padding: 10px 16px;
+  font-weight: 600;
+  color: var(--color-on-strong);
+  background: var(--color-primary-strong);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.theme-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 68px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(340px, calc(100% - 32px));
+  max-height: calc(100vh - 100px);
+  padding: 18px;
+  overflow: auto;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-lg);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 0.2);
+}
+
+.theme-panel fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.theme-panel legend {
+  margin-bottom: 6px;
+  padding: 0;
+  font-weight: 700;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  text-align: left;
+  background: transparent;
+  border: var(--border-w) solid var(--color-border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+}
+
+.theme-option[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--color-primary) 40%, var(--color-surface));
+  border-color: var(--color-primary-strong);
+}
+
+.theme-swatches {
+  display: flex;
+  flex: none;
+}
+
+.theme-swatches i {
+  width: 16px;
+  height: 16px;
+  margin-right: -4px;
+  border: 1px solid rgb(0 0 0 / 0.2);
+  border-radius: 50%;
+}
+
+.theme-shape {
+  display: flex;
+  gap: 6px;
+}
+
+.theme-shape .theme-option {
+  flex: 1;
+  justify-content: center;
+}
+
+/* ---------- Эффекты (включаются из переключателя) ---------- */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+html[data-bg='blobs'] body {
+  background:
+    radial-gradient(640px 420px at 8% -4%, color-mix(in srgb, var(--color-primary) 85%, transparent), transparent),
+    radial-gradient(520px 420px at 100% 18%, color-mix(in srgb, var(--color-accent) 70%, transparent), transparent),
+    radial-gradient(560px 460px at 0% 100%, color-mix(in srgb, var(--color-correct) 55%, transparent), transparent),
+    var(--color-background);
+  background-attachment: fixed;
+}
+
+html[data-bg='dots'] body {
+  background:
+    radial-gradient(color-mix(in srgb, var(--color-border) 55%, transparent) 1.3px, transparent 1.6px) 0 0 / 22px 22px,
+    var(--color-background);
+}
+
+html[data-bg='grid'] body {
+  background:
+    linear-gradient(color-mix(in srgb, var(--color-border) 22%, transparent) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, color-mix(in srgb, var(--color-border) 22%, transparent) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--color-background);
+}
+
+html[data-bg='grain'] body::before {
+  z-index: 100;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+html[data-fx~='glass'] .header {
+  position: sticky;
+  top: 8px;
+  z-index: 20;
+  background: color-mix(in srgb, var(--color-primary) 62%, transparent);
+  backdrop-filter: blur(14px) saturate(1.5);
+  border: 1px solid color-mix(in srgb, var(--color-surface) 60%, transparent);
+}
+
+html[data-fx~='lift'] .rule-card,
+html[data-fx~='lift'] .rule-option,
+html[data-fx~='lift'] .auth-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+html[data-fx~='lift'] .rule-card:hover,
+html[data-fx~='lift'] .rule-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -10px color-mix(in srgb, var(--color-primary-strong) 45%, transparent);
+}
+
+html[data-fx~='gradient'] .btn-primary {
+  background: linear-gradient(135deg, var(--color-accent), color-mix(in srgb, var(--color-accent) 50%, var(--color-primary)));
+}
+
+html[data-fx~='gradient'] .auth-signup,
+html[data-fx~='gradient'] .theme-toggle {
+  background: linear-gradient(135deg, var(--color-primary-strong), color-mix(in srgb, var(--color-primary-strong) 55%, var(--color-accent)));
+}
+
+html[data-fx~='shine'] .btn-primary,
+html[data-fx~='shine'] .auth-signup {
+  position: relative;
+  overflow: hidden;
+}
+
+html[data-fx~='shine'] .btn-primary::after,
+html[data-fx~='shine'] .auth-signup::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / 0.55) 50%, transparent 65%);
+  transform: translateX(-120%);
+}
+
+html[data-fx~='shine'] .btn-primary:hover::after,
+html[data-fx~='shine'] .auth-signup:hover::after {
+  transform: translateX(120%);
+  transition: transform 0.6s;
+}
+
+@keyframes rf-float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-fx~='float'] .dropzone:not(.is-dragging) {
+    animation: rf-float 5s ease-in-out infinite;
+  }
+}
+
+.theme-shape {
+  flex-wrap: wrap;
+}
+
+.theme-shape .theme-option {
+  flex: 0 1 auto;
 }

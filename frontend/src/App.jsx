@@ -7,6 +7,7 @@ import EditorPage from './pages/EditorPage.jsx'
 import RulesPage from './pages/RulesPage.jsx'
 import ReportsPage from './pages/ReportsPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
+import ThemeSwitcher from './components/ThemeSwitcher.jsx'
 
 export default function App() {
   const [file, setFile] = useState(null)
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/reports" element={<ReportsPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
+      <ThemeSwitcher />
     </>
   )
 }

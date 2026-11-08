@@ -9,6 +9,15 @@
   --color-primary-strong: #A65F5A;
   --color-border: #C79A94;
   --color-error-text: #A3382B;
+  --color-surface: #ffffff;
+  --color-on-strong: #ffffff;
+  --color-on-accent: #4A4A4A;
+  --border-w: 1.5px;
+  --r-sm: 10px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --shadow: 0 4px 20px color-mix(in srgb, var(--color-text) 10%, transparent);
   --font-main: "Quicksand", sans-serif;
   --font-text: "Inter", sans-serif;
 }
@@ -22,6 +31,7 @@ body {
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-text), sans-serif;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -34,4 +44,34 @@ button {
 :focus-visible {
   outline: 3px solid var(--color-primary-strong);
   outline-offset: 2px;
+}
+
+:root[data-shadow='deep'] {
+  --shadow: 0 24px 48px -16px color-mix(in srgb, var(--color-text) 40%, transparent);
+}
+
+:root[data-shadow='glow'] {
+  --shadow: 0 10px 36px color-mix(in srgb, var(--color-primary-strong) 38%, transparent);
+}
+
+:root[data-shadow='hard'] {
+  --shadow: 5px 5px 0 var(--color-primary-strong);
+}
+
+:root[data-shadow='none'] {
+  --shadow: none;
+}
+
+:root[data-radius='sharp'] {
+  --r-sm: 2px;
+  --r-md: 3px;
+  --r-lg: 4px;
+  --r-xl: 4px;
+}
+
+:root[data-radius='round'] {
+  --r-sm: 16px;
+  --r-md: 20px;
+  --r-lg: 30px;
+  --r-xl: 34px;
 }
